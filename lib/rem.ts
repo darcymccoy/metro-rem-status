@@ -56,11 +56,7 @@ function parseRem(html: string): NetworkStatus {
   });
 
   const level = "normal" as const;
-  const summary = alerts.length
-    ? `Normal service — ${alerts.length} planned interruption${
-        alerts.length > 1 ? "s" : ""
-      }`
-    : "Normal service";
+  const summary = "Normal service";
 
   return {
     network: "REM",

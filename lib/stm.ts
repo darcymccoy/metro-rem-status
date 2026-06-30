@@ -4,10 +4,10 @@ import type { Alert, LineStatus, NetworkStatus, StatusLevel } from "./types";
 const STM_ETAT_URL = "https://api.stm.info/pub/od/i3/v2/messages/etatservice";
 
 const METRO_LINES = [
-  { id: "1", line: "1 — Green", color: "#008e4f" },
-  { id: "2", line: "2 — Orange", color: "#ef8d22" },
-  { id: "4", line: "4 — Yellow", color: "#f5d100" },
-  { id: "5", line: "5 — Blue", color: "#0095da" },
+  { id: "1", line: "1 - Green", color: "#008e4f" },
+  { id: "2", line: "2 - Orange", color: "#ef8d22" },
+  { id: "4", line: "4 - Yellow", color: "#f5d100" },
+  { id: "5", line: "5 - Blue", color: "#0095da" },
 ] as const;
 
 const METRO_IDS = new Set<string>(METRO_LINES.map((l) => l.id));
@@ -40,7 +40,7 @@ function normalLine(l: (typeof METRO_LINES)[number]): LineStatus {
     line: l.line,
     color: l.color,
     level: "normal",
-    summary: "Normal métro service",
+    summary: "Normal service",
     alerts: [],
   };
 }
