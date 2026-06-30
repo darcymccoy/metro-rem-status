@@ -42,7 +42,7 @@ export default async function Home() {
     <main className="mx-auto max-w-2xl px-4 py-10">
       <header className="mb-8">
         <h1 className="text-2xl font-bold tracking-tight">
-          Montréal Metro &amp; REM Status
+          Montreal Metro &amp; REM Status
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
           Last updated {updated}
