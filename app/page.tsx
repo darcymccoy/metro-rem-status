@@ -5,13 +5,18 @@ import type { NetworkStatus } from "@/lib/types";
 function Section({ status }: { status: NetworkStatus }) {
   return (
     <section className="space-y-3">
-      <div className="flex items-baseline justify-between">
-        <h2 className="text-lg font-semibold">
-          {status.network === "STM" ? "STM Métro" : "REM"}
-        </h2>
-        {!status.ok && (
-          <span className="text-sm text-red-400">Status unavailable</span>
-        )}
+      <div>
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-lg font-semibold">
+            {status.network === "STM" ? "STM Métro" : "REM"}
+          </h2>
+          {!status.ok && (
+            <span className="text-sm text-red-400">Status unavailable</span>
+          )}
+        </div>
+        <p className="mt-1 text-sm text-zinc-500">
+          {status.network === "STM" ? <a href="https://www.stm.info/en/info/service-updates/metro">Metro status page</a> : <a href="https://rem.info/en/travelling/network-status">REM status page</a>}
+        </p>
       </div>
       <div className="space-y-2">
         {status.lines.map((line) => (
@@ -40,7 +45,7 @@ export default async function Home() {
           Montréal Metro &amp; REM Status
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
-          Last updated {updated} · refreshes every minute
+          Last updated {updated}
         </p>
       </header>
 
@@ -50,8 +55,8 @@ export default async function Home() {
       </div>
 
       <footer className="mt-12 text-xs text-zinc-600">
-        STM data via the official Service status API · REM data scraped from
-        rem.info. Unofficial; not affiliated with STM or REM.
+        Darcy McCoy - {new Date().getFullYear()}
+        <span className="ml-3"><a href="https://github.com/darcymccoy/metro-rem-status">See the code on GitHub.</a></span>
       </footer>
     </main>
   );

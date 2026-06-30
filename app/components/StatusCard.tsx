@@ -25,19 +25,37 @@ export function StatusCard({ status }: { status: LineStatus }) {
       </div>
 
       {status.alerts.length > 0 && (
-        <ul className="mt-3 space-y-2 border-t border-white/5 pt-3 text-sm text-zinc-400">
-          {status.alerts.map((a, i) => (
-            <li key={i}>
-              <p>{a.text}</p>
-              {a.when && (
-                <p className="mt-0.5 text-xs text-zinc-500">
-                  {a.kind === "upcoming" ? "Planned: " : ""}
-                  {a.when}
-                </p>
-              )}
-            </li>
-          ))}
-        </ul>
+        <details className="group mt-3 border-t border-white/5 pt-3">
+          <summary className="flex cursor-pointer items-center gap-2 text-sm text-zinc-400 marker:content-none">
+            <svg
+              className="h-4 w-4 shrink-0 text-zinc-500 transition-transform group-open:rotate-180"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+            {status.alerts.length} planned interruption
+            {status.alerts.length > 1 ? "s" : ""}
+          </summary>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-400">
+            {status.alerts.map((a, i) => (
+              <li key={i}>
+                <p>{a.text}</p>
+                {a.when && (
+                  <p className="mt-0.5 text-xs text-zinc-500">
+                    {a.kind === "upcoming" ? "Planned: " : ""}
+                    {a.when}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </details>
       )}
     </div>
   );
