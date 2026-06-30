@@ -1,6 +1,6 @@
-# [Combined Montreal Métro and REM service status page](https://metro-rem-status.vercel.app)
+# [Combined Montreal Metro and REM service status page](https://metro-rem-status.vercel.app)
 
-A small Next.js app that shows service status for the four métro lines and the REM together on one page.
+A small Next.js app that shows service status for the four metro lines and the REM together on one page.
 
 ## Getting Started
 

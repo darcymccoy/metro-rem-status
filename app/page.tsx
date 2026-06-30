@@ -8,7 +8,7 @@ function Section({ status }: { status: NetworkStatus }) {
       <div>
         <div className="flex items-baseline justify-between">
           <h2 className="text-lg font-semibold">
-            {status.network === "STM" ? "STM Métro" : "REM"}
+            {status.network === "STM" ? "STM Metro" : "REM"}
           </h2>
           {!status.ok && (
             <span className="text-sm text-red-400">Status unavailable</span>

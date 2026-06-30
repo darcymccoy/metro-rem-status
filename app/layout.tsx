@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Montréal Metro & REM Status",
-  description: "Combined live service status for the STM métro and the REM.",
+  title: "Montreal Metro & REM Status",
+  description: "Combined live service status for the STM metro and the REM.",
 };
 
 export default function RootLayout({
