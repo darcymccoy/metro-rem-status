@@ -1,4 +1,4 @@
-# [Combined Montreal Metro and REM service status page](https://metro-rem-status.vercel.app)
+# [Combined Montreal Metro and REM Status Page](https://metro-rem-status.vercel.app)
 
 A small Next.js app that shows service status for the four metro lines and the REM together on one page.
 
